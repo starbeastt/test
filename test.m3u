@@ -6,6 +6,12 @@
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
 https://etslive-v3-vidio-com-tokenized.akamaized.net/drm/dash/17474_stream.mpd?hdntl=exp=1720029583~acl=%2f*~id=149346192~data=hdntl~hmac=9b5d1dd17a9bbe5985441909dc17d60e8a89fbeb87f4ead87ffff01c7e4967a5040836bf0883154dbd6480cbe48743144b1859cd2275b25d891c2
 
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aniplus_logo.svg/440px-Aniplus_logo.svg.png" group-title="TEST",vidio2
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"ffd2fe6eec520f3d07038d1b8df48f8b","kid":"e824a94067ce170cd05451776d10f94f"}],"type":"temporary"}
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+https://etslive-v3-vidio-com-tokenized.akamaized.net/drm/dash/17474_stream.mpd?hdntl=exp=1720029583~acl=%2f*~id=149346192~data=hdntl~hmac=9b5d1dd17a9bbe5985441909dc17d60e8a89fbeb87f4ead87ffff01c7e4967a5040836bf0883154dbd6480cbe48743144b1859cd2275b25d891c2
 
 
 ===============================================================================================================================================
