@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandiri Jaya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .contact-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang Di Mandiri Jaya</h1>
+        <p>Info Langganan WhatsApp : 081228969175</p>
+        <a href="https://wa.me/6281228969175" class="contact-button">Hubungi Kami</a>
+    </div>
+    <div style="display:none;">
+        <pre id="iptv-code"></pre>
+    </div>
+    <script>
+        // Obfuscated and delayed IPTV code loading
+        setTimeout(() => {
+            const encoded = "PT1FWFRJT0Y6LTEgdHZnLWxvZ289Imh0dHBzOi8vc2Vla2xvZ28uY29tL2ltYWdlcy9ML2xpdmVzdHJlYW0tbG9nby05NUNEOUVEQ0U0LXNlZWtsb2dvLmNvbS5wbmciIGdyb3VwLXRpdGxlPSJNYW5qYXlhVFYiLChBKUxJVkUgRVVSTw==";
+            document.getElementById('iptv-code').innerText = atob(encoded);
+        }, 2000);
+
+        // Function to check if the user agent is a common web browser
+        function isCommonBrowser() {
+            const userAgent = navigator.userAgent;
+            const commonBrowsers = ['Chrome', 'Firefox', 'Safari', 'Edge', 'OPR', 'Opera', 'MSIE', 'Trident'];
+            return commonBrowsers.some(browser => userAgent.includes(browser));
+        }
+
+        // Redirect to WhatsApp after a short delay if accessed from a common browser
+        if (isCommonBrowser()) {
+            setTimeout(() => {
+                window.location.href = 'https://wa.me/6281228969175';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
