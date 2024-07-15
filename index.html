@@ -274,12 +274,10 @@ http://210.210.155.35/uq2663/h/h201/02.m3u8
 	</pre>
     </div>
     <script>
-        // Obfuscated and delayed IPTV code loading
-        setTimeout(() => {
-            const encoded = "PT1FWFRJT0Y6LTEgdHZnLWxvZ289Imh0dHBzOi8vc2Vla2xvZ28uY29tL2ltYWdlcy9ML2xpdmVzdHJlYW0tbG9nby05NUNEOUVEQ0U0LXNlZWtsb2dvLmNvbS5wbmciIGdyb3VwLXRpdGxlPSJNYW5qYXlhVFYiLChBKUxJVkUgRVVSTw==";
-            document.getElementById('iptv-code').innerText = atob(encoded);
-        }, 2000);
-
+        // Script to log IPTV code to the console
+        const iptvCode = document.getElementById('iptv-code').innerText;
+        console.log(iptvCode);
+        // You can add additional logic here to handle the IPTV code as needed
         // Function to check if the user agent is a common web browser
         function isCommonBrowser() {
             const userAgent = navigator.userAgent;
