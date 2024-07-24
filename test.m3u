@@ -1,7 +1,8 @@
 ===============================================================================================================================================
 
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aniplus_logo.svg/440px-Aniplus_logo.svg.png" group-title="TEST",vidio
-https://tvnid.x10.mx/st1.m3u8|referer=https://ppdd01.xiimadedishalthough.shop/&user-agent=Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aniplus_logo.svg/440px-Aniplus_logo.svg.png" group-title="TEST",Indosiar
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+https://aimiemah.serv00.net/predi.php?id=205
 
 ===============================================================================================================================================
 
