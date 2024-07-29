@@ -1,9 +1,11 @@
 ===============================================================================================================================================
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aniplus_logo.svg/440px-Aniplus_logo.svg.png" group-title="TEST",SCTV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+https://github.com/starbeastt/test/raw/main/lv_0_20240729222914.mp4
+
+##EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 #https://aimiemah.serv00.net/predi.php?id=205
-http://tvnid.x10.mx/premium/vidio.php?id=204
+#http://tvnid.x10.mx/premium/vidio.php?id=204
 
 ===============================================================================================================================================
 
