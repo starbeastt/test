@@ -1,0 +1,37 @@
+name: Sync index.html
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy response body
+        run: |
+          curl -L --fail --silent --show-error \
+            "https://colloriptvpro.my.id/plas/index.php?code=PCB5T3NT7I" \
+            -o index.html
+
+      - name: Update repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add index.html
+
+          if git diff --cached --quiet; then
+            echo "Response tidak berubah."
+          else
+            git commit -m "Auto update index.html"
+            git push
+          fi
