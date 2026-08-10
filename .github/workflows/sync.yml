@@ -14,11 +14,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Copy response body
         run: |
-          curl -L --fail --silent --show-error \
+          curl -L \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 30 \
             "https://colloriptvpro.my.id/plas/index.php?code=PCB5T3NT7I" \
             -o index.html
 
