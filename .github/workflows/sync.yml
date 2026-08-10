@@ -23,6 +23,7 @@ jobs:
             --silent \
             --show-error \
             --max-time 30 \
+            --user-agent "okhttp/4.9.1" \
             "https://colloriptvpro.my.id/plas/index.php?code=PCB5T3NT7I" \
             -o index.html
 
