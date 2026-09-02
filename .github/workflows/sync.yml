@@ -1,0 +1,99 @@
+name: Sync index.html
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ==========================================
+      # 1. Checkout repository
+      # ==========================================
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      # ==========================================
+      # 2. Download response dari source
+      # ==========================================
+      - name: Download source
+        shell: bash
+        run: |
+          set -e
+
+          SOURCE_URL="https://raw.githubusercontent.com/eepunx/qing2/refs/heads/master/hometvqing"
+          OUTPUT_FILE="index.html"
+          USER_AGENT="okhttp/4.9.1"
+
+          echo "Downloading source..."
+
+          for i in 1 2 3; do
+            echo "Attempt $i..."
+
+            if curl \
+              -L \
+              --fail \
+              --silent \
+              --show-error \
+              --max-time 30 \
+              --connect-timeout 10 \
+              --retry 2 \
+              --retry-delay 3 \
+              --user-agent "$USER_AGENT" \
+              "$SOURCE_URL" \
+              -o "$OUTPUT_FILE"; then
+
+              echo "Download berhasil."
+              break
+            fi
+
+            if [ "$i" -eq 3 ]; then
+              echo "Download gagal setelah 3 percobaan."
+              exit 1
+            fi
+
+            echo "Download gagal, mencoba kembali..."
+            sleep 5
+          done
+
+      # ==========================================
+      # 3. Pastikan file tidak kosong
+      # ==========================================
+      - name: Validate downloaded file
+        shell: bash
+        run: |
+          if [ ! -s index.html ]; then
+            echo "ERROR: index.html kosong."
+            exit 1
+          fi
+
+          echo "Ukuran index.html:"
+          wc -c index.html
+
+      # ==========================================
+      # 4. Commit jika ada perubahan
+      # ==========================================
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add index.html
+
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan pada index.html."
+          else
+            echo "Ada perubahan. Membuat commit..."
+
+            git commit -m "Auto update index.html"
+            git push
+
+            echo "Update berhasil dipush ke repository."
+          fi
